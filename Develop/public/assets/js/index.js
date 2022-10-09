@@ -4,12 +4,19 @@ let saveNoteBtn;
 let newNoteBtn;
 let noteList;
 
-if (window.location.pathname === '/notes') {
+
+
+if (window.location.pathname === '/') {
   noteTitle = document.querySelector('.note-title');
   noteText = document.querySelector('.note-textarea');
   saveNoteBtn = document.querySelector('.save-note');
   newNoteBtn = document.querySelector('.new-note');
   noteList = document.querySelectorAll('.list-container .list-group');
+}
+newNoteBtn.addEventListener('click', AddNew);
+
+function addNew() {
+  const newDiv = document.createElement("div");
 }
 
 // Show an element
