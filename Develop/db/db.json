@@ -1,19 +1,7 @@
-const fs = require('fs');
-
-
-app.get('/api/notes', (req, res) =>
-  res.sendFile('./public/notes.html')
-);
-
-app.post('/api/notes', (req, res) =>
-  res.sendFile('./public/notes.html')
-);
-
-
-
-// [
-//     {
-//         "title":"Test Title",
-//         "text":"Test text"
-//     }
-// ]
+[
+    {
+        "title":"Test Title",
+        "text":"Test text",
+        "id": "saved_note1"
+    }
+]
