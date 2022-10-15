@@ -7,22 +7,20 @@ const PORT = 3001;
 app.use(express.static('public'));
 
 app.get('/notes', (req, res) =>
-  res.sendFile('./public/notes.html')
-);
+  res.sendFile(path.join(__dirname,('./develop/public/notes.html'))));
 
 
 app.get('*', (req, res) =>
-  res.sendFile('./public/index.html')
-);
+  res.sendFile(path.join(__dirname,('./develop/public/index.html'))));
 
 
-app.get('/api/notes', (req, res) =>
-  res.json('./db/db.json')
-);
+// app.get('/api/notes', (req, res) =>
+//   res.json('./db/db.json')
+// );
 
-app.post('/api/notes', (req, res) =>
-  res.sendFile('./public/notes.html')
-);
+// app.post('/api/notes', (req, res) =>
+//   res.json('./public/notes.html')
+// );
 
 
 app.listen(PORT, () =>

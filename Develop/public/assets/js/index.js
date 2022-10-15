@@ -4,7 +4,7 @@ let saveNoteBtn = document.querySelector('.save-note');
 let newNoteBtn;
 let noteList;
 
-
+console.log('hello');
 
 if (window.location.pathname === '/') {
   noteTitle = document.querySelector('.note-title');
@@ -13,14 +13,6 @@ if (window.location.pathname === '/') {
   newNoteBtn = document.querySelector('.new-note');
   noteList = document.querySelectorAll('.list-container .list-group');
 }
-
-
-// function save() {
-//   const newDiv = document.createElement("div");
-//   console.log('save');
-//   document.body.appendChild(newDiv);
-// }
-
 
 
 // Show an element
