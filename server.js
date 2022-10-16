@@ -3,24 +3,17 @@ const path = require('path');
 const fs = require('fs');
 const app = express();
 const PORT = 3001;
-
+const api = require('./routes/noteroute')
+const html = require('./routes/htmlroute')
 app.use(express.static('public'));
 
-app.get('/notes', (req, res) =>
-  res.sendFile(path.join(__dirname,('./develop/public/notes.html'))));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use('/api', api);
+app.use('/', html);
 
 
-app.get('*', (req, res) =>
-  res.sendFile(path.join(__dirname,('./develop/public/index.html'))));
 
-
-// app.get('/api/notes', (req, res) =>
-//   res.json('./db/db.json')
-// );
-
-// app.post('/api/notes', (req, res) =>
-//   res.json('./public/notes.html')
-// );
 
 
 app.listen(PORT, () =>

@@ -3,6 +3,7 @@ let noteText;
 let saveNoteBtn = document.querySelector('.save-note');
 let newNoteBtn;
 let noteList;
+let value;
 
 console.log('hello');
 
