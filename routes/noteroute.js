@@ -1,19 +1,26 @@
 const router = require("express").Router();
 const { readFromFile, readAndAppend } = require("../helpers/fsUtils");
 router.get("/notes", (req, res) => {
-    readFromFile('../db/db.json').then((data) => res.json(JSON.parse(data)));
-});
+    readFromFile('./db/db.json').then((data) => {
+      console.log(data)
+      res.json(JSON.parse(data));
+})
+    });
 
 
 //localhost:3001/api/notes
 router.post("/notes", (req, res) => {
-  const { title, note } = req.body;
-  if (title && note) {
+console.log(req.body);
+
+  const { title, text } = req.body;
+  if (title && text) {
     const newNote = {
       title,
-      note,
+      text,
     };
-readAndAppend(newNote, "../db/db.json");
+console.log(newNote);
+
+readAndAppend(newNote, "./db/db.json");
     const response = {
       status: "success",
       body: newNote,
